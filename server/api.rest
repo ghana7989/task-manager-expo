@@ -1,6 +1,6 @@
 ### Variables
 @baseUrl = http://localhost:5001/api
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2I5OThiMWIyOGY0NGEyNmUzOTVjOWMiLCJpYXQiOjE3NDAyMTY0OTd9.revEp9-7ukiEtQm7QlDgywhyjn_VfnbfoNYmDRRX1T4
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2I5ZjkyMzkyODJjZGYzZDBhMDZjZjQiLCJpYXQiOjE3NDAyNDExODl9.ccD6satKYvESVOMDSqr9I8HuNadN08mxnQ1mqEafzS8
 
 ### Signup
 POST {{baseUrl}}/auth/signup
