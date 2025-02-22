@@ -1,5 +1,5 @@
 ### Variables
-@baseUrl = http://localhost:5001/api
+@baseUrl = https://task-manager-expo-production.up.railway.app/api
 @authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2I5ZjkyMzkyODJjZGYzZDBhMDZjZjQiLCJpYXQiOjE3NDAyNDExODl9.ccD6satKYvESVOMDSqr9I8HuNadN08mxnQ1mqEafzS8
 
 ### Signup

@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const BASE_URL = 'http://localhost:5001/api';
+const BASE_URL = 'https://task-manager-expo-production.up.railway.app/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
