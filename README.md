@@ -1,50 +1,146 @@
-# Welcome to your Expo app 👋
+# Task Manager App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A full-stack task management application built with React Native (Expo) and Node.js. The app features user authentication, task management with CRUD operations, and real-time UI updates.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **User Authentication**
+  - Secure signup and login
+  - JWT-based authentication
+  - Protected routes
+  - Automatic token management
 
+- **Task Management**
+  - Create new tasks
+  - View task list with pull-to-refresh
+  - Update task details
+  - Toggle task completion status
+  - Delete tasks
+  - Optimistic UI updates
+
+- **Modern UI/UX**
+  - Material Design using React Native Paper
+  - Responsive layout
+  - Loading states and error handling
+  - Smooth animations and transitions
+  - Pull-to-refresh functionality
+
+## Tech Stack
+
+### Frontend (Mobile App)
+- React Native with Expo
+- TypeScript for type safety
+- Expo Router for navigation
+- React Native Paper for UI components
+- Axios for API calls
+- AsyncStorage for token management
+
+### Backend (API Server)
+- Node.js & Express
+- MongoDB with Mongoose
+- JWT for authentication
+- RESTful API architecture
+- Middleware for route protection
+
+## Project Structure
+
+```
+task-manager/
+├── client/                 # React Native Expo app
+│   ├── app/               # App directory (Expo Router)
+│   │   ├── (app)/        # Protected app routes
+│   │   ├── (auth)/       # Authentication routes
+│   │   ├── context/      # React Context providers
+│   │   └── lib/          # Utilities and API client
+│   └── package.json      # Frontend dependencies
+│
+└── server/               # Node.js backend
+    ├── src/             # Source directory
+    │   ├── controllers/ # Route controllers
+    │   ├── middleware/  # Express middleware
+    │   ├── models/      # Mongoose models
+    │   └── routes/      # API routes
+    └── package.json     # Backend dependencies
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or later)
+- MongoDB instance
+- Expo Go app (for mobile testing)
+
+### Installation
+
+1. Clone the repository:
    ```bash
+   git clone <repository-url>
+   cd task-manager
+   ```
+
+2. Install backend dependencies:
+   ```bash
+   cd server
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
+3. Set up environment variables:
+   Create a `.env` file in the server directory:
+   ```
+   PORT=5001
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
    ```
 
-In the output, you'll find options to open the app in a
+4. Install frontend dependencies:
+   ```bash
+   cd ../client
+   npm install
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Running the App
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. Start the backend server:
+   ```bash
+   cd server
+   npm start
+   ```
 
-## Get a fresh project
+2. Start the Expo development server:
+   ```bash
+   cd client
+   npx expo start
+   ```
 
-When you're ready, run:
+3. Use the Expo Go app to scan the QR code and run the app on your device
 
-```bash
-npm run reset-project
-```
+## API Endpoints
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Authentication
+- `POST /api/auth/signup` - Register a new user
+- `POST /api/auth/login` - Login user
 
-## Learn more
+### Tasks
+- `GET /api/tasks` - Get all tasks for logged-in user
+- `POST /api/tasks` - Create a new task
+- `GET /api/tasks/:id` - Get specific task
+- `PUT /api/tasks/:id` - Update task
+- `DELETE /api/tasks/:id` - Delete task
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Acknowledgments
+
+- [Expo](https://docs.expo.dev/) for the amazing React Native development platform
+- [React Native Paper](https://callstack.github.io/react-native-paper/) for the Material Design components
+- [MongoDB](https://www.mongodb.com/) for the database solution

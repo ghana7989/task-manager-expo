@@ -1,0 +1,55 @@
+### Variables
+@baseUrl = http://localhost:5001/api
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2I5OThiMWIyOGY0NGEyNmUzOTVjOWMiLCJpYXQiOjE3NDAyMTY0OTd9.revEp9-7ukiEtQm7QlDgywhyjn_VfnbfoNYmDRRX1T4
+
+### Signup
+POST {{baseUrl}}/auth/signup
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### Create Task
+POST {{baseUrl}}/tasks
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "Complete Project",
+    "description": "Finish the task manager project"
+}
+
+### Get All Tasks
+GET {{baseUrl}}/tasks
+Authorization: Bearer {{authToken}}
+
+### Get Single Task
+GET {{baseUrl}}/tasks/TASK_ID_HERE
+Authorization: Bearer {{authToken}}
+
+### Update Task
+PUT {{baseUrl}}/tasks/TASK_ID_HERE
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+    "title": "Updated Task Title",
+    "description": "Updated task description",
+    "completed": true
+}
+
+### Delete Task
+DELETE {{baseUrl}}/tasks/TASK_ID_HERE
+Authorization: Bearer {{authToken}} 
